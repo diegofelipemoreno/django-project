@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul>
+    {% for task in tasks %}
+    <li>
+       
+        <h2>{{task.title}}</h2>
+
+        {% if task.important == True %}
+        <p>Tarea important</p>
+        {% endif %}
+
+        <p>{{task.description}}</p>
+        <p>{{task.created}}</p>
+        <p>{{task.datecompleted}}</p>
+        <p>Project: {{task.project}}</p>
+        <p>Project: {{task.user.username}}</p>
+        <button>Delete</button>
+        <button>done </button>
+
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
